@@ -1,3 +1,4 @@
+# llamado de librerias
 import dash
 from dash import dcc
 from dash import html
@@ -7,7 +8,7 @@ import numpy as np
 import pandas as pd
 import datetime as dt
 
-#Modificacion
+# Inicio de la app
 
 app = dash.Dash(
     __name__,
@@ -18,8 +19,7 @@ app.title = "Dashboard energia"
 server = app.server
 app.config.suppress_callback_exceptions = True
 
-
-# Load data from csv
+# Carga de datos (csv)
 def load_data():
     df = pd.read_csv("datos_energia.csv")    
     df.rename(columns={'time': 'fecha'}, inplace=True)
